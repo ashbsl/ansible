@@ -1,0 +1,22 @@
+---
+- name: Check Available Patches
+  hosts: your_target_vm
+  become: yes  # Run tasks with elevated privileges (sudo)
+
+  tasks:
+    - name: Update Yum Cache
+      yum:
+        name: '*'
+        state: latest
+      when: ansible_os_family == 'RedHat'
+
+    - name: List Available Updates
+      command:
+        cmd: "yum check-update"
+      register: available_updates
+      ignore_errors: yes  # Ignore errors in case there are no updates available
+
+    - name: Display Available Updates
+      debug:
+        var: available_updates.stdout_lines
+      when: available_updates.rc == 0  # Display updates only if the 'yum check-update' command succeeds
