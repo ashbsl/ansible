@@ -2,6 +2,7 @@
 - name: Check Available Patches
   hosts: oel7
   become: yes  # Run tasks with elevated privileges (sudo)
+  gather_facts: yes
 
   tasks:
     - name: Update Yum Cache
