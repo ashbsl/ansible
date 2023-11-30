@@ -1,0 +1,17 @@
+---
+- name: Check Available Patches
+  hosts: oel7
+  become: yes  # Run tasks with elevated privileges (sudo)
+  gather_facts: yes
+
+  tasks:
+    - name: List Available Updates
+      command:
+        cmd: "yum check-update"
+      register: available_updates
+      ignore_errors: yes  # Ignore errors in case there are no updates available
+
+    - name: Display Available Updates
+      debug:
+        var: available_updates.stdout_lines
+      when: available_updates.rc == 0  # Display updates only if the 'yum check-update' command succeeds
