@@ -5,10 +5,10 @@
   gather_facts: yes
 
   tasks:
-    # - name: Update Yum Cache
-    #   yum:
-    #     name: '*'
-    #     state: latest
+    - name: Update Yum Cache
+      yum:
+        name: '*'
+        state: latest
 
     - name: List Available Updates
       command:
