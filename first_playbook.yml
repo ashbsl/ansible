@@ -1,6 +1,6 @@
 ---
 - name: Check Available Patches
-  hosts: your_target_vm
+  hosts: 192.168.56.13
   become: yes  # Run tasks with elevated privileges (sudo)
 
   tasks:
