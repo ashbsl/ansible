@@ -2,5 +2,7 @@
 - name: Test WinRM connectivity
   hosts: windows
   become: false
-  gather_facts: false
-  win_ping:
+  gather_facts: false  
+  tasks:
+    - name: Test WinRM connectivity
+      win_ping:
