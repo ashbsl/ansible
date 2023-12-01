@@ -1,13 +1,6 @@
 ---
 - name: Test WinRM connectivity
-  hosts: windows_servers
+  hosts: windows
   tasks:
     - name: Test WinRM connectivity
-      win_shell: echo "WinRM is working fine"
-- name: Test WinRM connectivity
-  hosts: windows_servers
-  win_ping:
-
-- name: Induce an exception to see what happens
-  win_ping:
-    data: crash
+      win_ping:
