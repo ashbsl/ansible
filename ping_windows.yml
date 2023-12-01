@@ -5,4 +5,4 @@
   gather_facts: false  
   tasks:
     - name: Test WinRM connectivity
-      win_ping:
+      ping:
