@@ -1,6 +1,8 @@
----
 - name: Check Windows VM readiness
   hosts: win
   tasks:
+    - name: Debug Module Paths
+      debug:
+        var: ansible_all_modules
     - name: Gathering Facts
       ansible.windows.setup:
