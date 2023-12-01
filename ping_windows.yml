@@ -3,4 +3,4 @@
   hosts: windows_servers
   tasks:
     - name: Test WinRM connectivity
-      win_ping:
+      win_shell: echo "WinRM is working fine"
