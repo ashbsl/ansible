@@ -1,6 +1,6 @@
 ---
 - name: Test WinRM connectivity
-  hosts: windows
+  hosts: win
   tasks:
     - name: Test WinRM connectivity
       ping: 
