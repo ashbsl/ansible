@@ -1,0 +1,6 @@
+---
+- name: Check Windows VM readiness
+  hosts: win
+  tasks:
+    - name: Gather facts
+      setup:
