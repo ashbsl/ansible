@@ -1,9 +1,6 @@
 ---
 - name: ping Windows
   hosts: win
-  become: yes  
-  gather_facts: yes
- 
   tasks:
     - name: List Available Updates
       ansible.windows.win_ping:
