@@ -3,4 +3,4 @@
   hosts: win
   tasks:
     - name: Test WinRM connectivity
-      ping: 
+      win_ping: 
