@@ -1,0 +1,6 @@
+---
+- name: Test WinRM connectivity
+  hosts: windows_servers
+  tasks:
+    - name: Test WinRM connectivity
+      win_ping:
