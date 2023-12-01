@@ -3,4 +3,4 @@
   hosts: win
   tasks:
     - name: List Available Updates
-      ansible.windows.win_ping:
+      win_ping:
